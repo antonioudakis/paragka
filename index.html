@@ -13,20 +13,96 @@
   <style>
 	
 	body {
+		color:white;
 		margin-bottom:50px;
 		background-color:#ddd;
 	}
 	
+	@media screen and (orientation: portrait ) {
+		body {
+			font-size:0.95em;
+		}
+	}
+	
     footer {
-		height:50px;
-		left:0px;
-		right:0px;
+		position:fixed;
+		width:100%;;
+		height:20px;
 		bottom:0px;
-		margin-bottom:0px;
+		margin-auto;
+		background-color: #555;
 		color: white;
-		padding: 10px;
+		padding:2px;
+		font-size:0.8em;
     }
 	
+	table {
+		font-size:120%;
+		width:auto;
+		margin:auto;
+	}
+	
+	th {
+		color:yellow;
+		text-align:right;
+		text-shadow: 2px 2px 4px black;
+	}
+	
+	th.left {
+		text-align:left;
+	}
+	
+	th.center {
+		text-align:center;
+	}
+	
+	
+	td {
+		color:white;
+		text-align:right;
+	}
+	
+	td.left {
+		text-align:left;
+	}
+	
+	td.center {
+		text-align:center;
+	}
+	
+	tbody {
+		text-shadow: 2px 2px 4px black;
+	}
+	
+	h4 {
+		color:#33ff33;
+		text-shadow: 2px 2px 4px black;
+		font-style: italic;
+		letter-spacing: 3px;
+		width:100%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+		
+	a:link {
+		color:white;
+		font-style: italic;
+		font-size:1.2em;
+	}
+	
+	.carousel-inner {
+		margin-bottom:10px;
+		color:white;
+	}
+	
+	p {
+		text-align:justify;
+	}
+	
+	p.news {
+		text-align:center;
+	}
+
   </style>
 </head>
 <body background="./img/court.jpg">
@@ -52,52 +128,112 @@
 
 
 <div class="container-fluid text-center">
-	<h4 style="color:white;margin-top:60px"><i>1ο Εσωτερικό Πρωτάθλημα Παράγκα 2017</i></h4>
+	<h4 style="margin-top:60px"><i>1ο Εσωτερικό Πρωτάθλημα Παράγκα 2017</i></h4>
 </div>
 
 
-<ul class="container-fluid nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#standings">Απλό Βαθμολογία</a></li>
-    <li><a data-toggle="tab" href="#results">Απλό Αποτελέσματα</a></li>
-	<li><a data-toggle="tab" href="#standings1">Μικτό Βαθμολογία</a></li>
-    <li><a data-toggle="tab" href="#results1">Μικτό Αποτελέσματα</a></li>
-	<li><a data-toggle="tab" href="#announcements">Ανακοινώσεις</a></li>
+<div class="container-fluid">
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+	  <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+	
+	 <div class="item active">
+        <h5>Αποτέλεσμα</h5>
+        <p class = "news"><i>Ράπτης - Μοιρασγεντής (6-2)</i></p>
+      </div>
+      <div class="item">
+        <h5>Παρασκευή 19/05 21:30</h5>
+        <p class = "news"><i>Αντωνιουδάκης - Μακρυάς (Court 2)</i></p>
+      </div>
+	  <div class="item">
+        <h5>Δευτέρα 22/05 21:00</h5>
+        <p class = "news"><i>Γιαννόπουλος - Γκίνης (Court 5)</i></p>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel"  role ="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role ="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<ul class="container nav nav-pills">
+	<li class="dropdown active">
+		<a class="dropdown-toggle test" data-toggle="dropdown" href="#" style="margin-left:20px">Απλό Ανδρών<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li class="active"><a data-toggle="pill" href="#standings">Βαθμολογία</a></li>
+			<li class = "test"><a data-toggle="pill" href="#results">Πρόγραμμα - Αποτελέσματα</a></li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Διπλό Μικτό<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a data-toggle="pill" href="#standings1">Βαθμολογία</a></li>
+			<li><a data-toggle="pill" href="#results1">Πρόγραμμα - Αποτελέσματα</a></li>
+		</ul>
+	</li>
+	<li><a data-toggle="pill" href="#announcements">Ανακοινώσεις</a></li>
 </ul>
 
 <div class="tab-content">
     <div id="standings" class="tab-pane fade in active">
 
 		<div class="container">
-			<table class="table" style="color:white;font-size:120%;">
-				<thead style="text-align:right;color:yellow;">
+			<div class="container-fluid text-center">
+				<h4>Βαθμολογία (Απλό Ανδρών)</h4>
+				<hr>
+			</div>
+			<table class="table">
+				<thead>
 					<tr>
-						<th>Αθλητής</th>
-						<th style="text-align:right;">Νίκες</th>
-						<th style="text-align:right;">Ήττες</th>
-						<th style="text-align:right;">Games+</th>
-						<th style="text-align:right;">Games-</th>
-						<th style="text-align:right;">+/-</th>
+						<th class="left">Αθλητής</th>
+						<th>Νίκες</th>
+						<th>Ήττες</th>
+						<th>Games+</th>
+						<th>Games-</th>
+						<th>+/-</th>
 					</tr>
 				</thead>
-				<tbody style="text-align:right">
+				<tbody>
 					<tr>
+						<td class="left"><span class="badge">1</span>Ράπτης Χρήστος</td>
+						<td>5</td>
+						<td>0</td>
+						<td>30</td>
+						<td>15</td>
+						<td>+15</td>
+					</tr>
 					<tr>
-						<td style="text-align:left"><span class="badge">1</span>Βλαχάκης Ηλίας</td>
+						<td class="left"><span class="badge">2</span>Βλαχάκης Ηλίας</td>
 						<td>3</td>
 						<td>0</td>
 						<td>18</td>
 						<td>4</td>
 						<td>+14</td>
 					</tr>
-						<td style="text-align:left"><span class="badge">2</span>Ράπτης Χρήστος</td>
+					<tr>
+						<td class="left"><span class="badge">3</span>Παρούσης Χρήστος</td>
 						<td>3</td>
-						<td>0</td>
-						<td>18</td>
-						<td>10</td>
+						<td>1</td>
+						<td>21</td>
+						<td>13</td>
 						<td>+8</td>
 					</tr>
 					<tr>
-						<td style="text-align:left"><span class="badge">3</span>Γκίνης Σταμάτης</td>
+						<td class="left"><span class="badge">4</span>Γκίνης Σταμάτης</td>
 						<td>2</td>
 						<td>1</td>
 						<td>13</td>
@@ -105,23 +241,15 @@
 						<td>+5</td>
 					</tr>
 					<tr>
-						<td style="text-align:left"><span class="badge">4</span>Παρούσης Χρήστος</td>
+						<td class="left"><span class="badge">5</span>Κυριαζής Ανδρέας</td>
 						<td>2</td>
-						<td>1</td>
-						<td>15</td>
-						<td>11</td>
-						<td>+4</td>
+						<td>2</td>
+						<td>19</td>
+						<td>20</td>
+						<td>-1</td>
 					</tr>
 					<tr>
-						<td style="text-align:left"><span class="badge">5</span>Κυριαζής Ανδρέας</td>
-						<td>2</td>
-						<td>1</td>
-						<td>17</td>
-						<td>14</td>
-						<td>+3</td>
-					</tr>
-					<tr>
-						<td style="text-align:left"><span class="badge">6</span>Αντωνιουδάκης Θοδωρής</td>
+						<td class="left"><span class="badge">6</span>Αντωνιουδάκης Θοδωρής</td>
 						<td>1</td>
 						<td>3</td>
 						<td>15</td>
@@ -129,28 +257,28 @@
 						<td>-6</td>
 					</tr>
 					<tr>
-						<td style="text-align:left"><span class="badge">7</span>Μακρυάς Χριστόφορος</td>
-						<td>0</td>
-						<td>2</td>
-						<td>4</td>
-						<td>12</td>
-						<td>-8</td>
+						<td class="left"><span class="badge">7</span>Μοιρασγεντής Σεβαστός</td>
+						<td>1</td>
+						<td>3</td>
+						<td>11</td>
+						<td>23</td>
+						<td>-12</td>
 					</tr>
 					<tr>
-						<td style="text-align:left"><span class="badge">8</span>Γιαννόπουλος Μάριος</td>
+						<td class="left"><span class="badge">8</span>Μακρυάς Χριστόφορος</td>
 						<td>0</td>
 						<td>3</td>
-						<td>8</td>
-						<td>18</td>
+						<td>9</td>
+						<td>19</td>
 						<td>-10</td>
 					</tr>
 					<tr>
-						<td style="text-align:left"><span class="badge">9</span>Μοιρασγεντής Σεβαστός</td>
+						<td class="left"><span class="badge">9</span>Γιαννόπουλος Μάριος</td>
 						<td>0</td>
-						<td>2</td>
-						<td>2</td>
-						<td>12</td>
-						<td>-10</td>
+						<td>4</td>
+						<td>11</td>
+						<td>24</td>
+						<td>-13</td>
 					</tr>
 				</tbody>
 			</table>
@@ -161,301 +289,301 @@
 	
 	
 		<div class="container-fluid text-center">
-			<h4 style="color:white">Κανονική Περίοδος</h4>
+			<h4>Κανονική Περίοδος</h4>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">1η Αγωνιστική</h4>
+			<h4>1η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Κυριαζής - Ράπτης</td>
-						<td style="text-align:center">4 - 6</td>
+						<td class="left">Κυριαζής - Ράπτης</td>
+						<td class="center">4 - 6</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Αντωνιουδάκης - Γιαννόπουλος</td>
-						<td style="text-align:center">6 - 2</td>
+						<td class="left">Αντωνιουδάκης - Γιαννόπουλος</td>
+						<td class="center">6 - 2</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Παρούσης - Μοιρασγεντής</td>
-						<td style="text-align:center">6 - 2</td>
+						<td class="left">Παρούσης - Μοιρασγεντής</td>
+						<td class="center">6 - 2</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Βλαχάκης - Γκίνης</td>
-						<td style="text-align:center">6 - 1</td>
+						<td class="left">Βλαχάκης - Γκίνης</td>
+						<td class="center">6 - 1</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">2η Αγωνιστική</h4>
+			<h4>2η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Κυριαζής - Αντωνιουδάκης</td>
-						<td style="text-align:center">7 - 5</td>
+						<td class="left">Κυριαζής - Αντωνιουδάκης</td>
+						<td class="center">7 - 5</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Ράπτης - Μακρυάς</td>
-						<td style="text-align:center">6 - 3</td>
+						<td class="left">Ράπτης - Μακρυάς</td>
+						<td class="center">6 - 3</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Γιαννόπουλος - Παρούσης</td>
-						<td style="text-align:center">3 - 6</td>
+						<td class="left">Γιαννόπουλος - Παρούσης</td>
+						<td class="center">3 - 6</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Βλαχάκης - Μοιρασγεντής</td>
-						<td style="text-align:center">6 - 0</td>
+						<td class="left">Βλαχάκης - Μοιρασγεντής</td>
+						<td class="center">6 - 0</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">3η Αγωνιστική</h4>
+			<h4>3η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Κυριαζής - Γιαννόπουλος</td>
-						<td style="text-align:center">6 - 3</td>
+						<td class="left">Κυριαζής - Γιαννόπουλος</td>
+						<td class="center">6 - 3</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Ράπτης - Αντωνιουδάκης</td>
-						<td style="text-align:center">6 - 3</td>
+						<td class="left">Ράπτης - Αντωνιουδάκης</td>
+						<td class="center">6 - 3</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Παρούσης - Βλαχάκης</td>
-						<td style="text-align:center">3 - 6</td>
+						<td class="left">Παρούσης - Βλαχάκης</td>
+						<td class="center">3 - 6</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Γκίνης - Μακρυάς</td>
-						<td style="text-align:center">6 - 1</td>
+						<td class="left">Γκίνης - Μακρυάς</td>
+						<td class="center">6 - 1</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">4η Αγωνιστική</h4>
+			<h4>4η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Κυριαζής - Παρούσης</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Κυριαζής - Παρούσης</td>
+						<td class="center">2 - 6</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Ράπτης - Γιαννόπουλος</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Ράπτης - Γιαννόπουλος</td>
+						<td class="center">6 - 3</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Αντωνιουδάκης - Γκίνης</td>
-						<td style="text-align:center">1 - 6</td>
+						<td class="left">Αντωνιουδάκης - Γκίνης</td>
+						<td class="center">1 - 6</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Μοιρασγεντής - Μακρυάς</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Μοιρασγεντής - Μακρυάς</td>
+						<td class="center">7 - 5</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">5η Αγωνιστική</h4>
+			<h4>5η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Κυριαζής - Βλαχάκης</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Κυριαζής - Βλαχάκης</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Ράπτης - Μοιρασγεντής</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Ράπτης - Μοιρασγεντής</td>
+						<td class="center">6 - 2</td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Αντωνιουδάκης - Μακρυάς</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Αντωνιουδάκης - Μακρυάς</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Γιαννόπουλος - Γκίνης</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Γιαννόπουλος - Γκίνης</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">6η Αγωνιστική</h4>
+			<h4>6η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Κυριαζής - Γκίνης</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Κυριαζής - Γκίνης</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Ράπτης - Παρούσης</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Ράπτης - Παρούσης</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Αντωνιουδάκης - Μοιρασγεντής</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Αντωνιουδάκης - Μοιρασγεντής</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Βλαχάκης - Μακρυάς</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Βλαχάκης - Μακρυάς</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">7η Αγωνιστική</h4>
+			<h4>7η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Κυριαζής - Μοιρασγεντής</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Κυριαζής - Μοιρασγεντής</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Ράπτης - Βλαχάκης</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Ράπτης - Βλαχάκης</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Γιαννόπουλος - Μακρυάς</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Γιαννόπουλος - Μακρυάς</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Παρούσης - Γκίνης</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Παρούσης - Γκίνης</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">8η Αγωνιστική</h4>
+			<h4>8η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Κυριαζής - Μακρυάς</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Κυριαζής - Μακρυάς</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Αντωνιουδάκης - Παρούσης</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Αντωνιουδάκης - Παρούσης</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Γιαννόπουλος - Βλαχάκης</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Γιαννόπουλος - Βλαχάκης</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Γκίνης - Μοιρασγεντής</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Γκίνης - Μοιρασγεντής</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">9η Αγωνιστική</h4>
+			<h4>9η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Ράπτης - Γκίνης</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Ράπτης - Γκίνης</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Αντωνιουδάκης - Βλαχάκης</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Αντωνιουδάκης - Βλαχάκης</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Γιαννόπουλος - Μοιρασγεντής</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Γιαννόπουλος - Μοιρασγεντής</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Παρούσης - Μακρυάς</td>
-						<td style="text-align:center"><b>-</b></td>
+						<td class="left">Παρούσης - Μακρυάς</td>
+						<td class="center"><b>-</b></td>
 					</tr>
 				</tbody>
 			</table>
@@ -464,36 +592,32 @@
 	
 	<div id="standings1" class="tab-pane fade">
 		<div class="container">
-			<table class="table" style="color:white;font-size:120%;">
-				<thead style="text-align:right;color:yellow;">
+			<div class="container-fluid text-center">
+				<h4>Βαθμολογία (Διπλό Μικτό)</h4>
+				<hr>
+			</div>
+			<table class="table">
+				<thead>
 					<tr>
-						<th>Ομάδα</th>
-						<th style="text-align:right;">Νίκες</th>
-						<th style="text-align:right;">Ήττες</th>
-						<th style="text-align:right;">Sets+</th>
-						<th style="text-align:right;">Sets-</th>
-						<th style="text-align:right;">+/-</th>
+						<th class="left">Ομάδα</th>
+						<th>Νίκες</th>
+						<th>Ήττες</th>
+						<th>Sets+</th>
+						<th>Sets-</th>
+						<th>+/-</th>
 					</tr>
 				</thead>
-				<tbody style="text-align:right">
+				<tbody>
 					<tr>
 					<tr>
-						<td style="text-align:left"><span class="badge">-</span>Αντωνιουδάκης - Πάσχου</td>
+						<td class="left"><span class="badge">-</span>Αντωνιουδάκης - Πάσχου</td>
 						<td>0</td>
 						<td>0</td>
 						<td>0</td>
 						<td>0</td>
 						<td>0</td>
 					</tr>
-						<td style="text-align:left"><span class="badge">-</span>Βλαχάκης - Τζωρτζάτου</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-					</tr>
-					<tr>
-						<td style="text-align:left"><span class="badge">-</span>Μοιρασγεντής - Σαπουντζάκη</td>
+						<td class="left"><span class="badge">-</span>Βλαχάκης - Τζωρτζάτου</td>
 						<td>0</td>
 						<td>0</td>
 						<td>0</td>
@@ -501,7 +625,15 @@
 						<td>0</td>
 					</tr>
 					<tr>
-						<td style="text-align:left"><span class="badge">-</span>Ράπτης - Θεοδοσίου</td>
+						<td class="left"><span class="badge">-</span>Μοιρασγεντής - Σαπουντζάκη</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="left"><span class="badge">-</span>Ράπτης - Θεοδοσίου</td>
 						<td>0</td>
 						<td>0</td>
 						<td>0</td>
@@ -516,163 +648,163 @@
     <div id="results1" class="tab-pane fade in">
 	
 		<div class="container text-center">
-			<h4 style="color:white">Κανονική Περίοδος</h4>
+			<h4>Κανονική Περίοδος</h4>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">1η Αγωνιστική</h4>
+			<h4>1η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Βλαχάκης - Τζωρτζάτου</br>Αντωνιουδάκης - Πάσχου</td>
-						<td style="text-align:center"></td>
+						<td class="left">Βλαχάκης - Τζωρτζάτου</br>Αντωνιουδάκης - Πάσχου</td>
+						<td class="center"></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Ράπτης - Θεοδοσίου</br>Μοιρασγεντής - Σαπουντζάκη</td>
-						<td style="text-align:center"></td>
+						<td class="left">Ράπτης - Θεοδοσίου</br>Μοιρασγεντής - Σαπουντζάκη</td>
+						<td class="center"></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">2η Αγωνιστική</h4>
+			<h4>2η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Αντωνιουδάκης - Πάσχου</br>Μοιρασγεντής - Σαπουντζάκη</td>
-						<td style="text-align:center"></td>
+						<td class="left">Αντωνιουδάκης - Πάσχου</br>Μοιρασγεντής - Σαπουντζάκη</td>
+						<td class="center"></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Ράπτης - Θεοδοσίου</br>Βλαχάκης - Τζωρτζάτου</td>
-						<td style="text-align:center"></td>
+						<td class="left">Ράπτης - Θεοδοσίου</br>Βλαχάκης - Τζωρτζάτου</td>
+						<td class="center"></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">3η Αγωνιστική</h4>
+			<h4>3η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Μοιρασγεντής - Σαπουντζάκη</br>Βλαχάκης - Τζωρτζάτου</td>
-						<td style="text-align:center"></td>
+						<td class="left">Μοιρασγεντής - Σαπουντζάκη</br>Βλαχάκης - Τζωρτζάτου</td>
+						<td class="center"></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Αντωνιουδάκης - Πάσχου</br>Ράπτης - Θεοδοσίου</td>
-						<td style="text-align:center"></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		
-				<div class="container text-center">
-			<h4 style="color:white">4η Αγωνιστική</h4>
-		</div>
-		
-		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
-					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td style="text-align:left">Αντωνιουδάκης - Πάσχου</br>Βλαχάκης - Τζωρτζάτου</td>
-						<td style="text-align:center"></td>
-					</tr>
-					<tr>
-						<td style="text-align:left">Μοιρασγεντής - Σαπουντζάκη</br>Ράπτης - Θεοδοσίου</td>
-						<td style="text-align:center"></td>
+						<td class="left">Αντωνιουδάκης - Πάσχου</br>Ράπτης - Θεοδοσίου</td>
+						<td class="center"></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">5η Αγωνιστική</h4>
+			<h4>4η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Μοιρασγεντής - Σαπουντζάκη</br>Αντωνιουδάκης - Πάσχου</td>
-						<td style="text-align:center"></td>
+						<td class="left">Αντωνιουδάκης - Πάσχου</br>Βλαχάκης - Τζωρτζάτου</td>
+						<td class="center"></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Βλαχάκης - Τζωρτζάτου</br>Ράπτης - Θεοδοσίου</td>
-						<td style="text-align:center"></td>
+						<td class="left">Μοιρασγεντής - Σαπουντζάκη</br>Ράπτης - Θεοδοσίου</td>
+						<td class="center"></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		
 		<div class="container text-center">
-			<h4 style="color:white">6η Αγωνιστική</h4>
+			<h4>5η Αγωνιστική</h4>
 		</div>
 		
 		<div class="container">
-			<table class="table table-condensed" style="color:white;font-size:120%;">
-				<thead style="text-align:left;color:yellow;">
+			<table class="table table-condensed">
+				<thead>
 					<tr>
-						<th>Αγώνες</th>
-						<th style="text-align:center;">Αποτελέσματα</th>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="text-align:left">Βλαχάκης - Τζωρτζάτου</br>Μοιρασγεντής - Σαπουντζάκη</td>
-						<td style="text-align:center"></td>
+						<td class="left">Μοιρασγεντής - Σαπουντζάκη</br>Αντωνιουδάκης - Πάσχου</td>
+						<td class="center"></td>
 					</tr>
 					<tr>
-						<td style="text-align:left">Ράπτης - Θεοδοσίου</br>Αντωνιουδάκης - Πάσχου</td>
-						<td style="text-align:center"></td>
+						<td class="left">Βλαχάκης - Τζωρτζάτου</br>Ράπτης - Θεοδοσίου</td>
+						<td class="center"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="container text-center">
+			<h4>6η Αγωνιστική</h4>
+		</div>
+		
+		<div class="container">
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th class="left">Αγώνες</th>
+						<th class="center">Αποτελέσματα</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="left">Βλαχάκης - Τζωρτζάτου</br>Μοιρασγεντής - Σαπουντζάκη</td>
+						<td class="center"></td>
+					</tr>
+					<tr>
+						<td class="left">Ράπτης - Θεοδοσίου</br>Αντωνιουδάκης - Πάσχου</td>
+						<td class="center"></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 			
 	</div>
-	
+
 	<div id="announcements" class="tab-pane fade in">
-		<div class="container text-left">
+		<div class="container text-left" style="color:black">
 			</br>
 			<div class="well well-sm">
 				<h5><kbd>06 Μαϊ 2017, 10:30 π.μ.</kbd></h5>
@@ -693,6 +825,10 @@
 		</div>
 	</div>
 </div>
+
+<footer class="container-fluid text-center">
+	<p style="text-align:center"><i><span class="glyphicon glyphicon-copyright-mark"></span> Θοδωρής Αντωνιουδάκης</i></p>
+</footer>
 
 </body>
 </html>
